@@ -6,48 +6,68 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Hangman Game</title>
+	<title>jQuery RPG Game</title>
 
 
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<script></script>
+	
 </head>
 
 <body>
-	<div class="page-wrap" >
 
-		<header class="header">
-		<h1 id="header-info1">Hogwarts Battle Training</h1>
-		<h2 id="header-info2">Click on a Wizard to begin their training</h2>
-		</header>
+	<header class="header">
+	<h1 id="header-info1">Hogwarts Wizard Training</h1>
+	</header>
 
-		<!--
 		<section >
 			<div class="gameInfo">
-				<h2 id="">Click on a Wizard to begin their training</h2>
+				<section>
+					<p>Select a Wizard to train for battle.</p><p> You must defeat the other 3 to win the Wizard Battle Contest</p>
+				</section>
+
 				<div id="playAgain"></div>	
 			</div>
 		</section>
-		-->
-		<div class="wizard-wrapper"> <!-- wizard wrapper-->
 
-				<img id="harry" src="assets/images/harry300x300.jpg" alt="Harry Potter with his wand">
+	<div id="wrapper">
 
-				<img id="ron" src="assets/images/ron300x300.jpg" alt="Ron with his wand">
 
-				<img id="hermione" src="assets/images/hermione300x300.jpg" alt="Hermione with her wand">
+        <div id="gallery">
+            <img src="assets/images/harry300x300.jpg" alt="Harry Potter with his wand">
+            <img src="assets/images/draco300x300.jpg" alt="Draco with his wand">
+            <img src="assets/images/hermione300x300.jpg" alt="Hermione with her wand">
+           <img src="assets/images/ron300x300.jpg" alt="Ron with his wand">
+        </div>
 
-				<img id="draco" src="assets/images/draco300x300.jpg" alt="Draco with his wand">
+        <div id="enemies">
+	        <div id="box1a"></div>
+	        <div id="box1b"></div>
+	        <div id="box1c"></div>
+        </div>
 
-		</div> <!-- wizard wrapper -->
-				
-	</div> <!-- page-wrap -->
+        <div id="attacker">
+        <div id="box2"></div>
+        </div>
+
+        <button id="attackBtn">Attack</button>
+        <button id="restartBtn">Restart</button>
+
+        <div id="defender">
+        <div id="box3"></div>
+        </div>
+
+    </div> 
+
+
 
 	<footer class="site-footer">
 	    <h6 class="footer-info">&copy;Copyright2016 Christi Savino</h6>
 	</footer>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 </html> 
