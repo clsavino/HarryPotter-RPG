@@ -80,14 +80,6 @@ section #gameInfo {
 	max-width: 400px;
 }
 
-#display{
-	background: darkgray;
-	color:green;
-	font-size: 120px;
-	font-family: monospace;
-	text-align: center;
-}
-
 #wrapper{
 	width: 700px;
 	margin: 0 50px;
@@ -102,6 +94,7 @@ img {
 	width:150px;
 	margin: 10px ;
 }
+
 
 #box1a, #box1b, #box1c{
 	background: darkgray;
@@ -133,7 +126,9 @@ img {
 	overflow:auto;
 	margin-top: 10px;
 	text-align: center;
+	display: inline-block;
 }
+
 
 @media only screen and (max-width: 768px) {
 
