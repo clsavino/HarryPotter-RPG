@@ -107,12 +107,12 @@ var	wizards = {
 		//display updated defender HP
 		defenderHP = defenderHP - counterAttackPower;
 		console.log('defenderHP ' + defenderHP);
-
+		$('div.defender:last-child').html('<p>hp ' + defenderHP + '</p>');
 		//display updated attacker HP
 		attackerHP = attackerHP - defenderAP;
 		console.log('defenderAP ' + defenderAP);
 		console.log('attackerHP ' + attackerHP);
-
+		$('div.attacker:last-child').replaceWith('<p>hp ' + attackerHP + '</p>');
 		//document.getElementById("gameInfo").innerHTML = '<p> </p>';
 		document.getElementById("gameInfo").innerHTML = '<p>You attacked your enemy for ' + counterAttackPower + ' damage</p><p>Your enemy attacked you back for ' + defenderAP + ' damage</p>'; 
 		

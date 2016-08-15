@@ -43,13 +43,19 @@ header {
 }
 
 #gameInfo {
-	float: right;s
+	float: right;
 	text-align: center;
 	padding: 30px;
 	margin: 30px;
 	background-color: white;
 	color: black;
 	max-width: 400px;
+}
+
+.wizard-wrapper {
+	max-width: 800px;
+    margin: 0 200px auto;
+    text-align: left;
 }
 
 img {
