@@ -1,29 +1,29 @@
 $(document).ready(function() {
 
 var	wizards = {
-	harry:{
-		'name': 'harry',
+	Harry:{
+		'name': 'Harry',
 		'jpgFile': "assets/images/harry300x300.jpg",
 		'hp' : 175,
 		'ap' : 25,
 		'counterAttackPower' : 25
 	},
-	draco:{
-		'name': 'draco',
+	Draco:{
+		'name': 'Draco',
 		'jpgFile': "assets/images/draco300x300.jpg",
 		'hp' : 150,
 		'ap' : 20,
 		'counterAttackPower' : 20		
 	},
-	hermione:{
-		'name': 'hermione',
+	Hermione:{
+		'name': 'Hermione',
 		'jpgFile': "assets/images/hermione300x300.png",
 		'hp' : 125,
 		'ap' : 15,
 		'counterAttackPower' : 15		
 	},
-	ron:{
-		'name': 'ron',
+	Ron:{
+		'name': 'Ron',
 		'jpgFile': "assets/images/ron300x300.jpg",
 		'hp' : 100,
 		'ap' : 10,
@@ -41,11 +41,12 @@ var	wizards = {
 	var attackerSelected = false;
 	var defenderSelected = false;
 	var wizIndex = 0;
-	var attacker = "";
-	var defender = "";
+
+	var defender;
 	var defenderAP;
 	var defenderHP;
 	var defenderName;
+	var attacker;
 	var attackerHP;
 	var attackerAP;
 	var attackerName;
@@ -58,6 +59,8 @@ var	wizards = {
 	var nextWizardMsg = '<p>You have defeated your enemy. You can select another wizard to continue your training</p>';
 
 	var selectWizMsg = '<p>Select a Wizard to train for battle.</p><p>You must defeat the other 3 to win the Wizard Battle Contest.</p><p></p>';
+
+	var enemiesMsg = '<p> Wizards available to battle </p>';
 
 	// move the attacker to the attacker location
 	function removeAttacker(){
@@ -79,6 +82,7 @@ var	wizards = {
 	// remove the enemy when he has lost the round
 	function removeEnemy(){
 		console.log('removeEnemy function called');
+		$('.enemies').remove();
 	}
 	// all things to do to restart a game
 	function restart() {
@@ -129,7 +133,10 @@ var	wizards = {
 		
 		if (defenderHP <= 0) {
 			document.getElementById('gameInfo').innerHTML= nextWizardMsg;
-			removeEnemy();
+			$('img.defender').remove();
+			console.log('defender' + defender);
+			console.log('defenderHP <=0');
+
 			defenderSelected = false;
 			wins++;
 			enableAttack = false;
@@ -150,46 +157,46 @@ var	wizards = {
 	//listen for click on wizard
 	$('img').on('click', function() {
 		if (!attackerSelected) { 
-			console.log('attacker selected');
-			//no attacker selected yet
-			attacker = $(this).data('name');
-			attackerHP = wizards[attacker].hp;
-			attackerAP = wizards[attacker].ap;
-			attackerName = wizards[attacker].name;
-			console.log('attacker ' + attacker);
-			//clone the image
-			cloneImg = $(this).clone();
-			//insert the clone
-			$(cloneImg).insertAfter('#box2');
-			$('#box2').append(cloneImg);
-			//prepend the name of defender
-			$(cloneImg).prepend('<p>' + attackerName + '</p');
-			//append the HP of the defender
-			$(cloneImg).append('<p>HP ' + attackerHP + '</p>');	
-			//remove the image
-			$(this).remove();
 
-			moveWizards();
+			//no attacker selected yet
+			attacker = $(this);
+			attackerName = $(this).data('name');
+			attackerHP = wizards[attackerName].hp;
+			attackerAP = wizards[attackerName].ap;
+
+			// Display Wizards avail to battle message
+			$('#gallery').append(enemiesMsg);
+
+			//clone the image, append it to attacker div, remove from gallery			
+			cloneImg = $(this).clone();
+			$(cloneImg).addClass('attacker');
+			$('div.attacker').append(cloneImg);
+			$(this).remove(); //remove the image from gallery
+
+			//prepend the name of attacker
+			$('div.attacker').prepend('<p>' + attackerName + '</p');
+			//append the HP of the attacker
+			$('div.attacker').append('<p>HP ' + attackerHP + '</p>');
+			// set flag that an attacker has been selected
 			attackerSelected = true;
 
 		} else {
 			if (!defenderSelected) {
 				console.log('defender selected');
-				defender = $(this).data('name');
+				//defender = $(this).data('name');
+
+				defender = $(this);
+				defenderName = $(this).data('name');
+			    //defenderName = wizards[defender].name;
 				console.log('defender ' + defender);
-				defenderHP = wizards[defender].hp;
-			    defenderAP = wizards[defender].ap;
-			    defenderName = wizards[defender].name;
+				defenderHP = wizards[defenderName].hp;
+			    defenderAP = wizards[defenderName].ap;
+			    defenderName = wizards[defenderName].name;
 				//clone the image
 				cloneImg = $(this).clone();
-				//insert the clone
-				$('cloneImg').insertAfter('#box3');
-				$('#box3').append(cloneImg);
-
-				//prepend the name of defender
-				$(cloneImg).prepend('<p>' + defenderName + '</p');
-				//append the HP of the defender
-				$(cloneImg).append('<p>HP ' + defenderHP + '</p>');	
+				$(cloneImg).addClass('defender');
+				$('div.defender').append(cloneImg);
+	
 				//remove the clicked image
 				$(this).remove();
 
