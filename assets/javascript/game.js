@@ -87,10 +87,14 @@ var	wizards = {
 	// all things to do to restart a game
 	function restart() {
 		// remove attacker
-		removeAttacker();
+		$('img.attacker').remove();
+		// remove all wizards in gallery
+		$('#gallery').empty();
 		//Put 4 images back at top
-		//$('.wizard-wrapper').show();
-		moveWizards();
+		$('#gallery').append('<img class="images" src="assets/images/harry300x300.jpg" alt="Harry Potter with his wand" data-index="0" data-name="Harry">');
+		$('#gallery').append('<img class="images" src="assets/images/draco300x300.jpg" alt="Draco with his wand" data-index="1" data-name="Draco">');
+		$('#gallery').append('<img class="images" src="assets/images/hermione300x300.jpg" alt="Hermione with her wand" data-index="2" data-name="Hermione">');
+		$('#gallery').append('<img class="images" src="assets/images/ron300x300.jpg" alt="Ron with his wand" data-index="3" data-name="Ron">');
 
 		// Set Select Wizard message
 		document.getElementById('gameInfo').innerHTML= nextWizardMsg;
