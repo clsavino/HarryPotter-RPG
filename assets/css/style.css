@@ -43,7 +43,7 @@ header {
 }
 
 #gameInfo {
-	float: right;
+	float: right;s
 	text-align: center;
 	padding: 30px;
 	margin: 30px;
@@ -51,17 +51,10 @@ header {
 	color: black;
 	max-width: 400px;
 }
-/*
-#wrapper{
-	width: 700px;
-	margin: 0 50px;
-}
-*/
 
 img {
 	height:150px;
 	width:150px;
-	/*margin-top: 10px;*/
 	margin: 10px 10px 0 10px;
 }
 
@@ -73,23 +66,28 @@ img {
 	padding: 5px;
 	text-align: center;
 }
-/*
-#enemies {
 
-	max-width:800px;
-	max-height:200px;
-	overflow:auto;
-	margin-top: 10px;
-	text-align: center;
-	display: inline-block;
-}
-*/
 .attacker {
-	/*background: darkgray;*/
 	max-width:200px;
 	max-height:200px;
 	margin-top: 10px;
 	text-align: center;	
+}
+.attacker img, .defender img {
+	margin-top: 5px;
+}
+.attacker p {
+	background-color: white;
+	color: black;
+	max-width: 150px;
+	margin:0 22px;	
+}
+
+.defender p {
+	background-color: white;
+	color: black;
+	max-width: 150px;
+	margin:0 22px;
 }
 
 #attackBtn, #restartBtn {
@@ -99,9 +97,8 @@ img {
 }
 
 .defender {
-	/*background: darkgray;*/
-	max-width:200px;
-	max-height:200px;
+	max-width: 200px;
+	max-height: 200px;
 	margin-top: 10px;
 	text-align: center;	
 }
