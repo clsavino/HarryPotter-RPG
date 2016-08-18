@@ -51,6 +51,8 @@ var	wizards = {
 	var attackerAP;
 	var attackerName;
 	var cloneImg;
+	var cloneOfWizards = $('#gallery').clone();
+	console.log('cloneOfWizards ', cloneOfWizards);
 
 	var defeatedMsg = '<p>You have been defeated...Game Over. Press Restart to play again</p>';
 
@@ -62,7 +64,7 @@ var	wizards = {
 
 	var enemiesMsg = '<p> Wizards available to battle </p>';
 
-
+	var beginMsg = '<p> Let the training begin</p>';
 	// all things to do to restart a game
 	function restart() {
 		// remove attacker, name and hp
@@ -192,7 +194,8 @@ var	wizards = {
 				$('div.defender').prepend('<p>' + defenderName + '</p');
 				//append the HP of the attacker
 				$('div.defender').append('<p>hp ' + defenderHP + '</p>');
-
+				//add begin message
+				$('#gameInfo').html(beginMsg);
 				//remove the clicked image
 				$(this).remove();
 				// set flag that an attacker has been selected,
@@ -216,7 +219,7 @@ var	wizards = {
 	$('#attackBtn').on('click', function() {
 		console.log('attack button clicked');
 		console.log('enableAttack ' + enableAttack);
-		if (enableAttack = true) {
+		if (enableAttack) {
 			battle();
 		}
 					
