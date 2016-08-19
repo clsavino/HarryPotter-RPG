@@ -45,16 +45,19 @@ header {
 #gameInfo {
 	float: right;
 	text-align: center;
-	padding: 30px;
-	margin: 30px 30px;
-	background-color: white;
-	color: black;
+	/*padding: 20px;*/
+	margin: 20px 10px;
+	/*background-color: white;*/
+	color: crimson;
 	max-width: 400px;
+	font-size: 20px;
+	font-weight: bolder;
+
 }
 
 .wizard-wrapper {
 	max-width: 700px;
-    margin: 0 200px auto;
+    margin: 0 150px auto;
     text-align: left;
 }
 
@@ -71,9 +74,9 @@ img {
 }
 */
 #gallery p {
-	max-width: 400px;
-	background: white;
-	color: black;
+	max-width: 300px;
+	/*background: white;*/
+	color: crimson;
 	margin: 10px 0;
 	padding: 5px;
 	text-align: center;
@@ -89,15 +92,15 @@ img {
 	margin-top: 5px;
 }
 .attacker p {
-	background-color: white;
-	color: black;
+	/*background-color: white;*/
+	color: crimson;
 	max-width: 150px;
 	margin:0 22px;	
 }
 
 .defender p {
-	background-color: white;
-	color: black;
+	/*background-color: white;*/
+	color: crimson;
 	max-width: 150px;
 	margin:0 22px;
 }
@@ -105,7 +108,10 @@ img {
 #attackBtn, #restartBtn {
 	display: inline-block;
 	padding: 10px;
-	margin: 20px 10px 10px 20px;
+	margin: 20px 10px 0 20px;
+	color: crimson;
+	font-size: 20px;
+	font-weight: bolder;
 }
 
 .defender {
