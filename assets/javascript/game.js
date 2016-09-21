@@ -52,7 +52,6 @@ var	wizards = {
 	var attackerName;
 	var cloneImg;
 	var cloneOfWizards = $('#gallery').clone();
-	console.log('cloneOfWizards ', cloneOfWizards);
 
 	var defeatedMsg = '<p>You have been defeated...Game Over. Press Restart to play again</p>';
 
@@ -71,8 +70,10 @@ var	wizards = {
 		// remove attacker, name and hp
 		$('div.attacker').empty();
 		$('div.defender').empty();
+
 		// remove all wizards in gallery
 		$('#gallery').empty();
+
 
 		//Put 4 images back at top
 		$('#gallery').append('<img class="images" src="assets/images/harryT.png" alt="Harry Potter with his wand" data-index="0" data-name="Harry">');
@@ -113,7 +114,6 @@ var	wizards = {
 		attackerHP = attackerHP - defenderAP;
 		$('#ahp').text('hp ' + attackerHP);
 
-		//document.getElementById("gameInfo").innerHTML = '<p> </p>';
 		document.getElementById("gameInfo").innerHTML = '<p>You attacked your enemy for ' + counterAttackPower + ' damage</p><p>Your enemy attacked you back for ' + defenderAP + ' damage</p>'; 
 		
 		if (defenderHP <= 0) {
@@ -129,10 +129,12 @@ var	wizards = {
 			$('.attacker').empty();
 			enableAttack = false;
 			gameOver = true;
+			$('#attackBtn').css('visibility','hidden');
 		}
 		if (wins === 3) {
 			document.getElementById('gameInfo').innerHTML = winnerMsg;
 			enableAttack = false;
+			$('#attackBtn').css('visibility','hidden');
 			gameOver = true;
 		}
 	} //end of battle function
@@ -182,16 +184,20 @@ var	wizards = {
 					//add begin message
 					$('#gameInfo').html(beginMsg);
 					//remove the clicked image
-					$(this).remove();
+					//$(this).remove();
+					$(this).css('visibility','hidden');
+
 					// if last defender selected then remove Wizards avail message
 						if (wins === 2) {
-							$('#gallery').empty();
+							//$('#gallery').empty();
 						}
 					
-					// set flag that an attacker has been selected,
+					// set flag that an attacker has been selected
 					// enable attack
 					defenderSelected = true;
 					enableAttack = true;
+					// Make attack button visible
+					$('#attackBtn').css('visibility','visible');
 				};
 			};//end of else
 		}); //end of on.click

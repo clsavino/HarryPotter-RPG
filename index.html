@@ -15,6 +15,9 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/stylebootstrap.css">
 
+	<!-- Google Fonts link -->
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Unkempt" rel="stylesheet">
+
 	 <!-- jQuery Reference -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
@@ -25,19 +28,14 @@
 
 <body>
 	
-
-	<h1 id="header-info">Hogwarts Wizard Training</h1>
-
     <div class="container">
     	<div class="row">
-	    	<div class="col-sm-3"></div>
-
+    		<div class="col-sm-3"></div>
         	<div class="col-sm-6">
-        		<div id="gameInfo">
-				<p>Select a Wizard to train for battle.</p><p> You must defeat the other 3 to win the Wizard Battle Contest</p>
-				</div>	
+       			<div>
+    				<h1 id="header-info">HOGWARTS WIZARD TRAINING</h1>
+    			</div>				
         	</div>
-
         	<div class="col-sm-3"></div> 
         </div>
  	</div>	
@@ -49,18 +47,19 @@
 			
 			<div class="col-sm-6">
 				<div id="gallery">
-				<img class='images' src="assets/images/harryT.png" alt="Harry Potter with his wand" data-index='0' data-name='Harry'> 	
+					<img class='images' src="assets/images/harryT.png" alt="Harry Potter with his wand" data-index='0' data-name='Harry'> 	
 
-				<img class='images' src="assets/images/dracoT2.png" alt="Draco with his wand" data-index='1' data-name='Draco'>
-			
-				<img class='images' src="assets/images/hermioneT.png" alt="Hermione with her wand" data-index='2' data-name='Hermione'>
+					<img class='images' src="assets/images/dracoT2.png" alt="Draco with his wand" data-index='1' data-name='Draco'>
+				
+					<img class='images' src="assets/images/hermioneT.png" alt="Hermione with her wand" data-index='2' data-name='Hermione'>
 
-				<img class='images' src="assets/images/ronT2.png" alt="Ron with his wand" data-index='3' data-name='Ron'>
+					<img class='images' src="assets/images/ronT2.png" alt="Ron with his wand" data-index='3' data-name='Ron'>
 				</div> <!-- end of gallery div -->
-			</div> <!-- end col-sm-8-->
-
-			<div class="col-sm-3"></div>
-
+			</div> <!-- end col-sm-6-->
+        	<div class="col-sm-1">
+        		<button id="restartBtn" class="show">Restart</button> 
+        	</div>
+        	<div class="col-sm-2"></div>
     </div>  <!-- end of row -->    	
     </div> <!-- end of container-->  
 
@@ -70,17 +69,16 @@
 	    	
 	    	<div class="col-sm-2 attacker"></div>
 
-	    	<div class="col-sm-2">
-        		<button id="attackBtn" class="show">Attack</button>
+	    	<div class="col-sm-1">
+        		<button id="attackBtn">Attack</button>
         	</div>
 
 	    	<div class="col-sm-2 defender"></div> 
-
-        	<div class="col-sm-2">
-        		<button id="restartBtn" class="show">Restart</button> 
-        	</div>	    	
-
-	    	<div class="col-sm-1"></div>
+	    	<div class="col-sm-3">
+				<div id="gameInfo">
+					<p>Select a Wizard to train for battle.</p><p> You must defeat the other 3 to win the Wizard Battle Contest</p>
+				</div>	
+			</div>
     	</div>
     </div>
 
