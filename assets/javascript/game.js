@@ -3,28 +3,28 @@ $(document).ready(function() {
 var	wizards = {
 	Harry:{
 		'name': 'Harry',
-		'jpgFile': "assets/images/harry300x300.jpg",
+		'jpgFile': "assets/images/harryT.png",
 		'hp' : 175,
 		'ap' : 25,
 		'counterAttackPower' : 25
 	},
 	Draco:{
 		'name': 'Draco',
-		'jpgFile': "assets/images/draco300x300.jpg",
+		'jpgFile': "assets/images/dracoT2.png",
 		'hp' : 150,
 		'ap' : 20,
 		'counterAttackPower' : 20		
 	},
 	Hermione:{
 		'name': 'Hermione',
-		'jpgFile': "assets/images/hermione300x300.png",
+		'jpgFile': "assets/images/hermioneT.png",
 		'hp' : 125,
 		'ap' : 15,
 		'counterAttackPower' : 15		
 	},
 	Ron:{
 		'name': 'Ron',
-		'jpgFile': "assets/images/ron300x300.jpg",
+		'jpgFile': "assets/images/ronT2.png",
 		'hp' : 100,
 		'ap' : 10,
 		'counterAttackPower' : 10
@@ -75,10 +75,10 @@ var	wizards = {
 		$('#gallery').empty();
 
 		//Put 4 images back at top
-		$('#gallery').append('<img class="images" src="assets/images/harry300x300.jpg" alt="Harry Potter with his wand" data-index="0" data-name="Harry">');
-		$('#gallery').append('<img class="images" src="assets/images/draco300x300.jpg" alt="Draco with his wand" data-index="1" data-name="Draco">');
-		$('#gallery').append('<img class="images" src="assets/images/hermione300x300.jpg" alt="Hermione with her wand" data-index="2" data-name="Hermione">');
-		$('#gallery').append('<img class="images" src="assets/images/ron300x300.jpg" alt="Ron with his wand" data-index="3" data-name="Ron">');
+		$('#gallery').append('<img class="images" src="assets/images/harryT.png" alt="Harry Potter with his wand" data-index="0" data-name="Harry">');
+		$('#gallery').append('<img class="images" src="assets/images/dracoT2.png" alt="Draco with his wand" data-index="1" data-name="Draco">');
+		$('#gallery').append('<img class="images" src="assets/images/hermioneT.png" alt="Hermione with her wand" data-index="2" data-name="Hermione">');
+		$('#gallery').append('<img class="images" src="assets/images/ronT2.png" alt="Ron with his wand" data-index="3" data-name="Ron">');
 
 		//reassign click handler to appended images
 		clickHandler();

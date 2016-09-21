@@ -2,52 +2,87 @@
 <html lang="en-US">
 <head>
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>jQuery RPG Game</title>
 
-
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Simplex Bootstrap Theme -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-C0X5qw1DlkeV0RDunhmi4cUBUkPDTvUqzElcNWm1NI2T4k8tKMZ+wRPQOhZfSJ9N" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/stylebootstrap.css">
+
+	 <!-- jQuery Reference -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 </head>
 
 <body>
+	
 
-	<header class="header">
-	<h1 id="header-info1">Hogwarts Wizard Training</h1>
-	</header>
+	<h1 id="header-info">Hogwarts Wizard Training</h1>
 
-		<div class="wizard-wrapper">
+    <div class="container">
+    	<div class="row">
+	    	<div class="col-sm-3"></div>
 
-        <div id="gallery">
+        	<div class="col-sm-6">
+        		<div id="gameInfo">
+				<p>Select a Wizard to train for battle.</p><p> You must defeat the other 3 to win the Wizard Battle Contest</p>
+				</div>	
+        	</div>
 
-            <img class='images' src="assets/images/harry300x300.jpg" alt="Harry Potter with his wand" data-index='0' data-name='Harry'>
- 
-        	<img class='images' src="assets/images/draco300x300.jpg" alt="Draco with his wand" data-index='1' data-name='Draco'>
- 
-        	<img class='images' src="assets/images/hermione300x300.jpg" alt="Hermione with her wand" data-index='2' data-name='Hermione'>
-
-       		<img class='images' src="assets/images/ron300x300.jpg" alt="Ron with his wand" data-index='3' data-name='Ron'>
-
-        </div> <!-- end of gallery div -->
-
-
-        <div class="attacker">
+        	<div class="col-sm-3"></div> 
         </div>
+ 	</div>	
 
-        <button id="attackBtn" class="show">Attack</button>
-        <button id="restartBtn" class="show">Restart</button>
-        <div id="gameInfo">
-			<p>Select a Wizard to train for battle.</p><p> You must defeat the other 3 to win the Wizard Battle Contest</p>
-		</div>
+ 	<div class="container">
+	<div class="row">
 
-        <div class="defender">
-		</div> <!-- end of wizard-wrapper -->
+			<div class="col-sm-3"></div>
+			
+			<div class="col-sm-6">
+				<div id="gallery">
+				<img class='images' src="assets/images/harryT.png" alt="Harry Potter with his wand" data-index='0' data-name='Harry'> 	
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+				<img class='images' src="assets/images/dracoT2.png" alt="Draco with his wand" data-index='1' data-name='Draco'>
+			
+				<img class='images' src="assets/images/hermioneT.png" alt="Hermione with her wand" data-index='2' data-name='Hermione'>
+
+				<img class='images' src="assets/images/ronT2.png" alt="Ron with his wand" data-index='3' data-name='Ron'>
+				</div> <!-- end of gallery div -->
+			</div> <!-- end col-sm-8-->
+
+			<div class="col-sm-3"></div>
+
+    </div>  <!-- end of row -->    	
+    </div> <!-- end of container-->  
+
+    <div class="container">
+    	<div class="row">
+	    	<div class="col-sm-3"></div>
+	    	
+	    	<div class="col-sm-2 attacker"></div>
+
+	    	<div class="col-sm-2">
+        		<button id="attackBtn" class="show">Attack</button>
+        	</div>
+
+	    	<div class="col-sm-2 defender"></div> 
+
+        	<div class="col-sm-2">
+        		<button id="restartBtn" class="show">Restart</button> 
+        	</div>	    	
+
+	    	<div class="col-sm-1"></div>
+    	</div>
+    </div>
 
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
